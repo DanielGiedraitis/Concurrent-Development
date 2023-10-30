@@ -3,13 +3,13 @@
 ---
 
 ## Description
-**Synchronized Message Printing:**
+**1. Synchronized Message Printing:**
   Synchronize two threads to ensure that one thread can print its messages before the other. This will illustrate the concept of thread synchronization and how semaphores can be used to control the order of execution.
 
-**Mutual Exclusion with Shared Variables:**
+**2. Mutual Exclusion with Shared Variables:**
   The second aspect of this lab involves demonstrating mutual exclusion among multiple threads that aim to update a shared variable. The goal is to ensure that only one thread can modify the shared variable at any given time. This showcases the importance of mutual exclusion in multi-threaded programming.
 
-**Multiple Executables:**
+**3. Multiple Executables:**
 This lab includes two different executables:
 - **'helloThreads':** This executable will represent the use of mutex locks to prevent threads from running concurrently, showcasing the basic principles of synchronization.
 - **'mutualEx':** This executable extends the concept further by allowing multiple threads to write to a shared variable. Regardless of which thread accesses it, the final state of the shared variable will always remain consistent, emphasizing the effectiveness of mutual exclusion
