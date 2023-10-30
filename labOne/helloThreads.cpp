@@ -1,38 +1,58 @@
+/*!
+	// Author: Daniel Giedraitis (C00260331)
+	// Date Created: 25/09/2023
+
+	// Purpose: A Semaphore Implementation to demonstrate serialization, where task A must occur before task B.
+*/
+
 #include "Semaphore.h"
 #include <iostream>
 #include <thread>
 #include <unistd.h>
 
 /*! displays a message first*/
-void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay){
-  sleep(delay);
+void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay)
+{
+  // Sleep for a specified amount of time.
+  sleep(delay); 
+
   std::cout <<"I ";
   std::cout << "must ";
   std::cout << "print ";
   std::cout << "first"<<std::endl;
-  //tell taskTwo to start now
+
+  // Signal the semaphore to allow taskTwo to start
+  theSemaphore->Signal();
 }
 
 /*! displays a message second*/
-void taskTwo(std::shared_ptr<Semaphore> theSemaphore){
-  //wait here until taskOne finishes...
+void taskTwo(std::shared_ptr<Semaphore> theSemaphore)
+{
+  // Wait for the semaphore to be signaled by taskOne
+  theSemaphore->Wait(); 
+  
   std::cout <<"This ";
   std::cout << "will ";
-  sleep(5);
+  sleep(5); // Pauses execution of the current thread for 5 seconds
   std::cout << "appear ";
   std::cout << "second"<<std::endl;
 }
 
 
-int main(void){
+int main(void)
+{
+  // Declare two thread objects
   std::thread threadOne, threadTwo;
+
+  // Create a shared pointer to a Semaphore object and initialize it
   std::shared_ptr<Semaphore> sem( new Semaphore);
-  sem->Signal();sem->Wait();//these serve no purpose
+
   /**< Launch the threads  */
   int taskOneDelay=5;
   threadOne=std::thread(taskTwo,sem);
   threadTwo=std::thread(taskOne,sem,taskOneDelay);
   std::cout << "Launched from the main\n";
+
    /**< Wait for the threads to finish */
   threadOne.join();
   threadTwo.join();
