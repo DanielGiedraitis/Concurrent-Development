@@ -1,16 +1,17 @@
-#Joseph Kehoe 13/9/2017
-#First simple Makefile
-#Used to contain commands to compile projects
-#Equivalent(?) to a project file in VStudio -- only better!
-#See http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/ for info.
-
+# Author: Daniel Giedraitis (C00260331)
+# Date Created: 05/10/2023
+# Purpose: Rules for creating object files, building executables and cleaning up generated object files.
 
 CC=g++
 CFLAGS= -std=c++11 -pthread
 
-SIMPLE: helloThreads.cpp
-	g++ -std=c++11 -pthread helloThreads.cpp
+RENDEZVOUS: rendezvous.cpp
+	$(CC) $(CFLAGS) rendezvous.cpp Semaphore.cpp -o rendezvous
 
-
+# This is customary and just deletes all .o files
 CLEAN:
 	rm *.o
+
+
+
+	
