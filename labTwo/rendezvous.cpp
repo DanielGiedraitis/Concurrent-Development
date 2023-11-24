@@ -1,9 +1,10 @@
-/*!
-	// Author: Daniel Giedraitis (C00260331)
-	// Date Created: 05/10/2023
-
-	// Purpose: Demonstrating the rendezvous pattern using semaphores.
-*/
+/**
+ * @file rendezvous.cpp
+ * @author Daniel Giedraitis (C00260331)
+ * @brief Demonstrating the rendezvous pattern using semaphores.
+ * @date 05/10/2023
+ * @copyright GPL-3.0
+ */
 
 #include "Semaphore.h"
 #include <thread>
