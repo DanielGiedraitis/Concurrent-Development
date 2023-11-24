@@ -8,7 +8,7 @@ This lab explores the concept of rendezvous, emphasizing thread synchronization 
 ## List of Files and Contents
 - **Semaphore.h -** Header file for the Semaphore class.
 - **Semaphore.cpp -** Implementation file for the Semaphore class.
-- **rendezevous.cpp -** C++ file to demonstrate a rendezevous using Mutuexs.
+- **rendezvous.cpp -** C++ file to demonstrate a rendezvous using Mutuexs.
 - **Makefile1 -** File containing rules that guide the system in compiling the code and generating a working executable called "rendezvous."
 - **README -** Contains Lab 2 information, installation instructions, compilation, and execution guidelines.
 
