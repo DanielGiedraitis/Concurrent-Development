@@ -1,0 +1,100 @@
+\doxysection{mandelbroit.\+cpp File Reference}
+\hypertarget{mandelbroit_8cpp}{}\label{mandelbroit_8cpp}\index{mandelbroit.cpp@{mandelbroit.cpp}}
+
+
+A program to generate the Mandelbrot set using parallel processing.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$complex$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{mandelbroit_8cpp_a90efdf8cc6afbd58cf8c363528e55155}{calc}} (complex$<$ int $>$ c, int depth)
+\begin{DoxyCompactList}\small\item\em Calculates the Mandelbrot iteration count for a given complex number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{mandelbroit_8cpp_a714bf111c48a34bc7463c91153b491a1}{mandel}} (int p\mbox{[}ROW\mbox{]}\mbox{[}COL\mbox{]}, int depth)
+\begin{DoxyCompactList}\small\item\em Generates the Mandelbrot set using parallel processing and stores the result in a 2D array. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mandelbroit_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em Main function to initialize necessary variables and call the Mandelbrot generation function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{mandelbroit_8cpp_a442a526f05e8429d610b777bb0a4446b}\label{mandelbroit_8cpp_a442a526f05e8429d610b777bb0a4446b} 
+const int {\bfseries ROW} =1000
+\item 
+\Hypertarget{mandelbroit_8cpp_ade5776b4151c77e0c375d1091dae8978}\label{mandelbroit_8cpp_ade5776b4151c77e0c375d1091dae8978} 
+const int {\bfseries COL} =1000
+\item 
+\Hypertarget{mandelbroit_8cpp_a58b87c2251946d94f6a6dc43572db440}\label{mandelbroit_8cpp_a58b87c2251946d94f6a6dc43572db440} 
+const int {\bfseries DEPTH} =10
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A program to generate the Mandelbrot set using parallel processing. 
+
+\begin{DoxyAuthor}{Author}
+Daniel Giedraitis (C00260331) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+02/11/2023 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+GPL-\/3.\+0 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mandelbroit_8cpp_a90efdf8cc6afbd58cf8c363528e55155}\label{mandelbroit_8cpp_a90efdf8cc6afbd58cf8c363528e55155} 
+\index{mandelbroit.cpp@{mandelbroit.cpp}!calc@{calc}}
+\index{calc@{calc}!mandelbroit.cpp@{mandelbroit.cpp}}
+\doxysubsubsection{\texorpdfstring{calc()}{calc()}}
+{\footnotesize\ttfamily int calc (\begin{DoxyParamCaption}\item[{complex$<$ int $>$}]{c,  }\item[{int}]{depth }\end{DoxyParamCaption})}
+
+
+
+Calculates the Mandelbrot iteration count for a given complex number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The complex number to iterate. \\
+\hline
+{\em depth} & The maximum depth for iteration. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The number of iterations until divergence. 
+\end{DoxyReturn}
+\Hypertarget{mandelbroit_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{mandelbroit_8cpp_a840291bc02cba5474a4cb46a9b9566fe} 
+\index{mandelbroit.cpp@{mandelbroit.cpp}!main@{main}}
+\index{main@{main}!mandelbroit.cpp@{mandelbroit.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Main function to initialize necessary variables and call the Mandelbrot generation function. 
+
+\begin{DoxyReturn}{Returns}
+int Exit status. 
+\end{DoxyReturn}
+\Hypertarget{mandelbroit_8cpp_a714bf111c48a34bc7463c91153b491a1}\label{mandelbroit_8cpp_a714bf111c48a34bc7463c91153b491a1} 
+\index{mandelbroit.cpp@{mandelbroit.cpp}!mandel@{mandel}}
+\index{mandel@{mandel}!mandelbroit.cpp@{mandelbroit.cpp}}
+\doxysubsubsection{\texorpdfstring{mandel()}{mandel()}}
+{\footnotesize\ttfamily void mandel (\begin{DoxyParamCaption}\item[{int}]{p\mbox{[}\+ROW\mbox{]}\mbox{[}\+COL\mbox{]},  }\item[{int}]{depth }\end{DoxyParamCaption})}
+
+
+
+Generates the Mandelbrot set using parallel processing and stores the result in a 2D array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The 2D array to store the Mandelbrot set. \\
+\hline
+{\em depth} & The maximum depth for iteration. \\
+\hline
+\end{DoxyParams}

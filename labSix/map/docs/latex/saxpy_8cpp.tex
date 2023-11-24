@@ -1,0 +1,69 @@
+\doxysection{saxpy.\+cpp File Reference}
+\hypertarget{saxpy_8cpp}{}\label{saxpy_8cpp}\index{saxpy.cpp@{saxpy.cpp}}
+
+
+Perform SAXPY operation and measure execution time.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{saxpy_8cpp_a8c812fc93b815fd11479e6b6f259a4ef}{saxpy}} (unsigned long n, float a, float y\mbox{[}$\,$\mbox{]}, float x\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Performs the SAXPY operation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{saxpy_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em The main function, initializes arrays and measures execution time of SAXPY operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Perform SAXPY operation and measure execution time. 
+
+\begin{DoxyAuthor}{Author}
+Daniel Giedraitis (C00260331) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+02/11/2023 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+GPL-\/3.\+0 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{saxpy_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{saxpy_8cpp_a840291bc02cba5474a4cb46a9b9566fe} 
+\index{saxpy.cpp@{saxpy.cpp}!main@{main}}
+\index{main@{main}!saxpy.cpp@{saxpy.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+The main function, initializes arrays and measures execution time of SAXPY operation. 
+
+\begin{DoxyReturn}{Returns}
+Integer indicating the exit status. 
+\end{DoxyReturn}
+\Hypertarget{saxpy_8cpp_a8c812fc93b815fd11479e6b6f259a4ef}\label{saxpy_8cpp_a8c812fc93b815fd11479e6b6f259a4ef} 
+\index{saxpy.cpp@{saxpy.cpp}!saxpy@{saxpy}}
+\index{saxpy@{saxpy}!saxpy.cpp@{saxpy.cpp}}
+\doxysubsubsection{\texorpdfstring{saxpy()}{saxpy()}}
+{\footnotesize\ttfamily void saxpy (\begin{DoxyParamCaption}\item[{unsigned long}]{n,  }\item[{float}]{a,  }\item[{float}]{y\mbox{[}$\,$\mbox{]},  }\item[{float}]{x\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Performs the SAXPY operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The size of the arrays. \\
+\hline
+{\em a} & The scalar value. \\
+\hline
+{\em y} & The output array. \\
+\hline
+{\em x} & The input array. \\
+\hline
+\end{DoxyParams}
