@@ -1,6 +1,7 @@
 # Author: Daniel Giedraitis (C00260331)
 # Date Created: 02/11/2023
 # Purpose: It contains rules that tell the system how to compile the code and produce a working executable called philosophers.
+# GitHub URL: https://github.com/DanielGiedraitis/Concurrent-Development
 # Licence: GPL-3.0
 
 CC=g++

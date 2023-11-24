@@ -1,10 +1,10 @@
-/*!
-	// Author: Daniel Giedraitis (C00260331)
-	// Date Created: 02/11/2023
-
-	// Purpose: Implements the dining philosophers problem using Semaphores for synchronization.
-
-*/
+/**
+ * @file main.cpp
+ * @author Daniel Giedraitis (C00260331)
+ * @brief Implements the dining philosophers problem using Semaphores for synchronization.
+ * @date 02/11/2023
+ * @copyright GPL-3.0
+ */
 
 #include "Semaphore.h"
 #include <iostream>
@@ -20,12 +20,22 @@ const int EATTIME=5;
 std::vector<Semaphore> forks(COUNT);
 
 
+/**
+ * \brief Simulates the philosopher thinking for a random period.
+ * 
+ * \param myID The ID of the philosopher.
+ */
 void think(int myID){
   int seconds=rand() % THINKTIME + 1;
   std::cout << myID << " is thinking! "<<std::endl;
   sleep(seconds);
 }
 
+/**
+ * \brief Attempts to acquire forks for the philosopher.
+ * 
+ * \param philID The ID of the philosopher.
+ */
 void get_forks(int philID){
   if(philID == COUNT - 1) {
     forks[(philID+1)%COUNT].Wait();
@@ -37,6 +47,11 @@ void get_forks(int philID){
   }
 }
 
+/**
+ * \brief Releases the forks held by the philosopher.
+ * 
+ * \param philID The ID of the philosopher.
+ */
 void put_forks(int philID){
   if(philID == COUNT - 1) {
     forks[(philID+1)%COUNT].Signal();
@@ -48,12 +63,23 @@ void put_forks(int philID){
   }
 }
 
+/**
+ * \brief Simulates the philosopher eating for a random period.
+ * 
+ * \param myID The ID of the philosopher.
+ */
 void eat(int myID){
   int seconds=rand() % EATTIME + 1;
     std::cout << myID << " is chomping! "<<std::endl;
   sleep(seconds);  
 }
 
+/**
+ * \brief Simulates the activities of a philosopher.
+ * 
+ * \param id The ID of the philosopher.
+ * \param liftFork Shared pointer to the Semaphore controlling access to the table.
+ */
 void philosopher(int id, std::shared_ptr<Semaphore> liftFork){
   while(true){
     think(id);
@@ -66,7 +92,13 @@ void philosopher(int id, std::shared_ptr<Semaphore> liftFork){
 }//philosopher
 
 
-
+/**
+ * \brief Entry point of the program.
+ * 
+ * Initializes resources and starts philosopher threads.
+ * 
+ * \return Integer 0 upon successful execution.
+ */
 int main(void){
   srand (time(NULL)); // initialize random seed: 
   std::shared_ptr<Semaphore> liftFork = std::make_shared<Semaphore>(4);

@@ -1,0 +1,91 @@
+\doxysection{Semaphore Class Reference}
+\hypertarget{class_semaphore}{}\label{class_semaphore}\index{Semaphore@{Semaphore}}
+
+
+A \doxylink{class_semaphore}{Semaphore} Implementation.  
+
+
+
+
+{\ttfamily \#include $<$Semaphore.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_semaphore_a0d9290d316636875ca85d1d78950a817}\label{class_semaphore_a0d9290d316636875ca85d1d78950a817} 
+{\bfseries Semaphore} (unsigned int ui\+Count=0)
+\item 
+void \mbox{\hyperlink{class_semaphore_a72aabebf026e3a8b1f3e4d0fa8ee1eda}{Wait}} ()
+\begin{DoxyCompactList}\small\item\em Blocks until the semaphore\textquotesingle{}s count is greater than 0 and then decrements it. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename R , typename P $>$ }\\bool \mbox{\hyperlink{class_semaphore_a7f700173ae86ae623684109066e07656}{Wait}} (const std\+::chrono\+::duration$<$ R, P $>$ \&cr\+Rel\+Time)
+\begin{DoxyCompactList}\small\item\em Blocks until the semaphore\textquotesingle{}s count is greater than 0 or until a timeout occurs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_semaphore_a86f92f738b4486439b296d8e235895f2}{Signal}} ()
+\begin{DoxyCompactList}\small\item\em Increments the semaphore\textquotesingle{}s count and unblocks one waiting thread, if any. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_semaphore_a35a1e2f6b9864691a17e2827aaa3acd6}{get\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current count of the semaphore. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \doxylink{class_semaphore}{Semaphore} Implementation. 
+
+Uses C++11 features such as mutex and condition variables to implement \doxylink{class_semaphore}{Semaphore} 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_semaphore_a35a1e2f6b9864691a17e2827aaa3acd6}\label{class_semaphore_a35a1e2f6b9864691a17e2827aaa3acd6} 
+\index{Semaphore@{Semaphore}!getCount@{getCount}}
+\index{getCount@{getCount}!Semaphore@{Semaphore}}
+\doxysubsubsection{\texorpdfstring{getCount()}{getCount()}}
+{\footnotesize\ttfamily int Semaphore\+::get\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves the current count of the semaphore. 
+
+\begin{DoxyReturn}{Returns}
+The current count of the semaphore. 
+\end{DoxyReturn}
+\Hypertarget{class_semaphore_a86f92f738b4486439b296d8e235895f2}\label{class_semaphore_a86f92f738b4486439b296d8e235895f2} 
+\index{Semaphore@{Semaphore}!Signal@{Signal}}
+\index{Signal@{Signal}!Semaphore@{Semaphore}}
+\doxysubsubsection{\texorpdfstring{Signal()}{Signal()}}
+{\footnotesize\ttfamily void Semaphore\+::\+Signal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increments the semaphore\textquotesingle{}s count and unblocks one waiting thread, if any. 
+
+Increases the count of the semaphore and notifies one waiting thread, if any, that the count has been incremented. \Hypertarget{class_semaphore_a72aabebf026e3a8b1f3e4d0fa8ee1eda}\label{class_semaphore_a72aabebf026e3a8b1f3e4d0fa8ee1eda} 
+\index{Semaphore@{Semaphore}!Wait@{Wait}}
+\index{Wait@{Wait}!Semaphore@{Semaphore}}
+\doxysubsubsection{\texorpdfstring{Wait()}{Wait()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Semaphore\+::\+Wait (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Blocks until the semaphore\textquotesingle{}s count is greater than 0 and then decrements it. 
+
+Uses a mutex and condition variable to wait until the semaphore count is greater than 0. Once the count is greater than 0, it decrements the count. \Hypertarget{class_semaphore_a7f700173ae86ae623684109066e07656}\label{class_semaphore_a7f700173ae86ae623684109066e07656} 
+\index{Semaphore@{Semaphore}!Wait@{Wait}}
+\index{Wait@{Wait}!Semaphore@{Semaphore}}
+\doxysubsubsection{\texorpdfstring{Wait()}{Wait()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename R , typename P $>$ \\
+bool Semaphore\+::\+Wait (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::duration$<$ R, P $>$ \&}]{cr\+Rel\+Time }\end{DoxyParamCaption})}
+
+
+
+Blocks until the semaphore\textquotesingle{}s count is greater than 0 or until a timeout occurs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cr\+Rel\+Time} & The maximum duration to wait for the semaphore. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the semaphore was acquired within the given duration, false if a timeout occurred.
+\end{DoxyReturn}
+Uses a mutex and condition variable to wait until the semaphore count is greater than 0 or until the specified timeout duration elapses. If the semaphore is acquired within the duration, it decrements the count and returns true. If a timeout occurs, it returns false. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_semaphore_8h}{Semaphore.\+h}}\item 
+\mbox{\hyperlink{_semaphore_8cpp}{Semaphore.\+cpp}}\end{DoxyCompactItemize}

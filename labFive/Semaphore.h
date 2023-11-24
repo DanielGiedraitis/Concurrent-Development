@@ -1,3 +1,11 @@
+/**
+ * @file Semaphore.h
+ * @author Daniel Giedraitis (C00260331)
+ * @brief A Semaphore Implementation
+ * @date 02/11/2023
+ * @copyright GPL-3.0
+ */
+
 #ifndef SEMAPHORE_H
 #define SEMAPHORE_H 
 #include <mutex>

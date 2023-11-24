@@ -1,0 +1,153 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+Implements the dining philosophers problem using Semaphores for synchronization.  
+
+
+{\ttfamily \#include "{}Semaphore.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8cpp_af2e8d96df12418ec613ac68b90ba41b7}\label{main_8cpp_af2e8d96df12418ec613ac68b90ba41b7} 
+std\+::vector$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$ {\bfseries forks} (COUNT)
+\item 
+void \mbox{\hyperlink{main_8cpp_a995feefa383b82265e681a3fe8c012c2}{think}} (int my\+ID)
+\begin{DoxyCompactList}\small\item\em Simulates the philosopher thinking for a random period. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a21a9defcc14025ebcaa9484d47622b9d}{get\+\_\+forks}} (int phil\+ID)
+\begin{DoxyCompactList}\small\item\em Attempts to acquire forks for the philosopher. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a4cec90aab433a1e4df09b9b6662d5c3e}{put\+\_\+forks}} (int phil\+ID)
+\begin{DoxyCompactList}\small\item\em Releases the forks held by the philosopher. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a228fa031b8deb86a9df2eea2892c3241}{eat}} (int my\+ID)
+\begin{DoxyCompactList}\small\item\em Simulates the philosopher eating for a random period. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a69232096c94affdb4b3baab7388caf4d}{philosopher}} (int id, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$ lift\+Fork)
+\begin{DoxyCompactList}\small\item\em Simulates the activities of a philosopher. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em Entry point of the program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8cpp_a308572e3937ef7742e8cc93025faf712}\label{main_8cpp_a308572e3937ef7742e8cc93025faf712} 
+const int {\bfseries COUNT} = 5
+\item 
+\Hypertarget{main_8cpp_a5a1bc6e8c62cf965547cd9bba4da2448}\label{main_8cpp_a5a1bc6e8c62cf965547cd9bba4da2448} 
+const int {\bfseries THINKTIME} =3
+\item 
+\Hypertarget{main_8cpp_a92e894dc749f0caa8232e432965090af}\label{main_8cpp_a92e894dc749f0caa8232e432965090af} 
+const int {\bfseries EATTIME} =5
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the dining philosophers problem using Semaphores for synchronization. 
+
+\begin{DoxyAuthor}{Author}
+Daniel Giedraitis (C00260331) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+02/11/2023 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+GPL-\/3.\+0 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a228fa031b8deb86a9df2eea2892c3241}\label{main_8cpp_a228fa031b8deb86a9df2eea2892c3241} 
+\index{main.cpp@{main.cpp}!eat@{eat}}
+\index{eat@{eat}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{eat()}{eat()}}
+{\footnotesize\ttfamily void eat (\begin{DoxyParamCaption}\item[{int}]{my\+ID }\end{DoxyParamCaption})}
+
+
+
+Simulates the philosopher eating for a random period. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+ID} & The ID of the philosopher. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_a21a9defcc14025ebcaa9484d47622b9d}\label{main_8cpp_a21a9defcc14025ebcaa9484d47622b9d} 
+\index{main.cpp@{main.cpp}!get\_forks@{get\_forks}}
+\index{get\_forks@{get\_forks}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_forks()}{get\_forks()}}
+{\footnotesize\ttfamily void get\+\_\+forks (\begin{DoxyParamCaption}\item[{int}]{phil\+ID }\end{DoxyParamCaption})}
+
+
+
+Attempts to acquire forks for the philosopher. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em phil\+ID} & The ID of the philosopher. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Entry point of the program. 
+
+Initializes resources and starts philosopher threads.
+
+\begin{DoxyReturn}{Returns}
+Integer 0 upon successful execution. 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_a69232096c94affdb4b3baab7388caf4d}\label{main_8cpp_a69232096c94affdb4b3baab7388caf4d} 
+\index{main.cpp@{main.cpp}!philosopher@{philosopher}}
+\index{philosopher@{philosopher}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{philosopher()}{philosopher()}}
+{\footnotesize\ttfamily void philosopher (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$}]{lift\+Fork }\end{DoxyParamCaption})}
+
+
+
+Simulates the activities of a philosopher. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the philosopher. \\
+\hline
+{\em lift\+Fork} & Shared pointer to the \doxylink{class_semaphore}{Semaphore} controlling access to the table. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_a4cec90aab433a1e4df09b9b6662d5c3e}\label{main_8cpp_a4cec90aab433a1e4df09b9b6662d5c3e} 
+\index{main.cpp@{main.cpp}!put\_forks@{put\_forks}}
+\index{put\_forks@{put\_forks}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{put\_forks()}{put\_forks()}}
+{\footnotesize\ttfamily void put\+\_\+forks (\begin{DoxyParamCaption}\item[{int}]{phil\+ID }\end{DoxyParamCaption})}
+
+
+
+Releases the forks held by the philosopher. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em phil\+ID} & The ID of the philosopher. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_a995feefa383b82265e681a3fe8c012c2}\label{main_8cpp_a995feefa383b82265e681a3fe8c012c2} 
+\index{main.cpp@{main.cpp}!think@{think}}
+\index{think@{think}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{think()}{think()}}
+{\footnotesize\ttfamily void think (\begin{DoxyParamCaption}\item[{int}]{my\+ID }\end{DoxyParamCaption})}
+
+
+
+Simulates the philosopher thinking for a random period. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+ID} & The ID of the philosopher. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,85 @@
+\chapter{Lab 5\+: Dining Philosophers}
+\hypertarget{index}{}\label{index}\index{Lab 5: Dining Philosophers@{Lab 5: Dining Philosophers}}
+\label{index_md__r_e_a_d_m_e}%
+\Hypertarget{index_md__r_e_a_d_m_e}%
+ \DoxyHorRuler{0}
+\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Description}{Description}}\label{index_autotoc_md2}
+This project revolves around solving the Dining Philosophers problem, where multiple philosophers compete for a limited number of resources (in this case, dining utensils) in a way that prevents deadlock and starvation.\hypertarget{index_autotoc_md3}{}\doxysection{\texorpdfstring{List of Files and Contents}{List of Files and Contents}}\label{index_autotoc_md3}
+
+\begin{DoxyItemize}
+\item {\bfseries{\doxylink{_semaphore_8h}{Semaphore.\+h} -\/}} Header file for the \doxylink{class_semaphore}{Semaphore} class.
+\item {\bfseries{\doxylink{_semaphore_8cpp}{Semaphore.\+cpp} -\/}} Implementation file for the \doxylink{class_semaphore}{Semaphore} class.
+\item {\bfseries{\doxylink{main_8cpp}{main.\+cpp} -\/}} The file containing the main function. This main function creates a solution to the Dining Philosophers problem.
+\item {\bfseries{Makefile -\/}} This is the project file. It contains rules that tell the system how to compile the code and produce a working executable called philosophers.
+\item {\bfseries{README -\/}} Contains Lab 5 information, installation instructions, compilation, and execution guidelines.
+\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysection{\texorpdfstring{How to install project}{How to install project}}\label{index_autotoc_md4}
+To set up this project on your system, follow these steps\+:
+
+
+\begin{DoxyEnumerate}
+\item Ensure that GCC is installed on your machine.
+\item Clone this repository to your local environment.
+\item Open your terminal and navigate to the project directory.
+\item Once in the folder, use the following commands\+:
+\begin{DoxyItemize}
+\item {\bfseries{Build the Executables\+:}}
+\begin{DoxyItemize}
+\item Run {\ttfamily make} or {\ttfamily make build} to generate the main executables.
+\item For {\ttfamily philosophers}\+:
+\begin{DoxyItemize}
+\item Execute {\ttfamily make philosophers}.
+\end{DoxyItemize}
+\item To create a debug version with symbols\+:
+\begin{DoxyItemize}
+\item Use {\ttfamily make debug} to build the executables with debug symbols.
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item {\bfseries{Run the Executables\+:}}
+\begin{DoxyItemize}
+\item To execute the generated programs, use the shell command {\ttfamily ./philosophers}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md5}{}\doxysection{\texorpdfstring{Testing Procedures}{Testing Procedures}}\label{index_autotoc_md5}
+\hypertarget{index_autotoc_md6}{}\doxysubsection{\texorpdfstring{philosophers}{philosophers}}\label{index_autotoc_md6}
+
+\begin{DoxyItemize}
+\item {\bfseries{Expected Output}}\+:
+\begin{DoxyItemize}
+\item 1 is thinking!
+\item 0 is chomping!
+\item 3 is thinking!
+\item 2 is chomping!
+\item 0 is thinking!
+\item 4 is chomping!
+\item 1 is chomping!
+\item 2 is thinking!
+\item 4 is thinking!
+\item 3 is chomping!
+\item 0 is chomping!
+\item 1 is thinking!
+\item 3 is thinking!
+\item 2 is chomping!
+\item 2 is thinking!
+\item 3 is chomping!
+\item 3 is thinking!
+\item 0 is thinking!
+\item 1 is chomping!
+\item 4 is chomping!
+\item 1 is thinking!
+\item 2 is chomping!
+\item 4 is thinking!
+\item 0 is chomping!
+\item 2 is thinking!
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+The sequence continues until manually stopped.\hypertarget{index_autotoc_md7}{}\doxysection{\texorpdfstring{License}{License}}\label{index_autotoc_md7}
+\href{https://www.gnu.org/licenses/gpl-3.0.en.html}{\texttt{ GNU General Public License v3.\+0}}\hypertarget{index_autotoc_md8}{}\doxysection{\texorpdfstring{Author}{Author}}\label{index_autotoc_md8}
+
+\begin{DoxyItemize}
+\item {\bfseries{Name\+:}} Daniel Giedraitis
+\item {\bfseries{Email\+:}} \href{mailto:daniel.giedraitis@gmail.com}{\texttt{ daniel.\+giedraitis@gmail.\+com}}
+\item {\bfseries{Other Projects\+:}} \href{https://github.com/DanielGiedraitis}{\texttt{ https\+://github.\+com/\+Daniel\+Giedraitis}}
+\item {\bfseries{Linked\+In\+:}} \href{https://www.linkedin.com/in/daniel-giedraitis}{\texttt{ https\+://www.\+linkedin.\+com/in/daniel-\/giedraitis}}
+\end{DoxyItemize}\hypertarget{index_autotoc_md9}{}\doxysection{\texorpdfstring{Github Repository}{Github Repository}}\label{index_autotoc_md9}
+Url\+: \href{https://github.com/DanielGiedraitis/Concurrent-Development/tree/main}{\texttt{ Github Repository}} 
