@@ -1,8 +1,8 @@
-#Joseph Kehoe 13/9/2017
-#Simple Makefile
-#Used to contain commands to compile projects
-#Equivalent(?) to a project file in VStudio -- only better!
-#See http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/ for info.
+# Author: Daniel Giedraitis (C00260331)
+# Date Created: 10/11/2023
+# Purpose: It contains rules that tell the system how to compile the code.
+# GitHub URL: https://github.com/DanielGiedraitis/Concurrent-Development
+# Licence: GPL-3.0
 
 CPPFILES= reduction.cpp
 HFILES=

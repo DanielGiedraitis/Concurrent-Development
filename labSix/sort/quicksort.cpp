@@ -1,49 +1,10 @@
-// quicksort.cpp --- 
-// 
-// Filename: quicksort.cpp
-// Description: 
-// Author: Joseph Kehoe
-// Maintainer: 
-// Created: Sat Feb  9 16:43:33 2019 (+0000)
-// Version: 
-// Package-Requires: ()
-// Last-Updated: Tue Feb 12 16:48:22 2019 (+0000)
-//           By: Joseph
-//     Update #: 103
-// URL: 
-// Doc URL: 
-// Keywords: 
-// Compatibility: 
-// 
-// 
-
-// Commentary: 
-// 
-// 
-// 
-// 
-
-// Change Log:
-// 
-// 
-// 
-// 
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or (at
-// your option) any later version.
-// 
-// This program is distributed in the hope that it will be useful, but
-// WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-// General Public License for more details.
-// 
-// You should have received a copy of the GNU General Public License
-// along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
-//
-// 
-
-// Code:
+/**
+ * @file quicksort.cpp
+ * @author Daniel Giedraitis (C00260331)
+ * @brief Implementation of the Quicksort algorithm using OpenMP for parallelization.
+ * @date 02/11/2023
+ * @copyright GPL-3.0
+ */
 
 #include <iostream>
 #include <stdlib.h>     /* srand, rand */
@@ -58,7 +19,13 @@ using namespace std ;
 
 const int LENGTH=2000;
 
-//template <typename T>
+/**
+ * @brief Partitions the array based on a pivot element.
+ * @param myArray The array to be partitioned.
+ * @param low The starting index of the partition.
+ * @param high The ending index of the partition.
+ * @return The index of the pivot element after partitioning.
+ */
 int partition (vector<int>& myArray , int low , int high ){
   int pivot=myArray[high];
   int k=high;
@@ -77,7 +44,13 @@ int partition (vector<int>& myArray , int low , int high ){
   return i-1;
 }
   
-//template<typename T>
+/**
+ * @brief Recursive function to perform Quicksort on the array.
+ * @param myArray The array to be sorted.
+ * @param low The starting index of the partition.
+ * @param high The ending index of the partition.
+ * @return 1 indicating the completion of the sorting process.
+ */
 int quicksort(vector<int>& myArray , int low , int high ){
   if (low<high){
     int pivot=partition(myArray,low,high);
@@ -92,7 +65,10 @@ int quicksort(vector<int>& myArray , int low , int high ){
 }//quicksort
 
 
-
+/**
+ * @brief Main function to test the Quicksort algorithm.
+ * Generates random data, performs Quicksort, and displays the sorted array.
+ */
 int main(void){
   srand (time(NULL));
   vector<int> data(LENGTH);

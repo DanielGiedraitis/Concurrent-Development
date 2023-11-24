@@ -1,49 +1,10 @@
-// reduction.cpp --- 
-// 
-// Filename: quicksort.cpp
-// Description: 
-// Author: Joseph Kehoe
-// Maintainer: 
-// Created: Sat Feb 19 13:23:33 2019 (+0000)
-// Version: 
-// Package-Requires: ()
-// Last-Updated: Sun Oct 22 20:51:32 2023 (+0100)
-//           By: Joseph
-//     Update #: 106
-// URL: 
-// Doc URL: 
-// Keywords: 
-// Compatibility: 
-// 
-// 
-
-// Commentary: 
-// 
-// 
-// 
-// 
-
-// Change Log:
-// 
-// 
-// 
-// 
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or (at
-// your option) any later version.
-// 
-// This program is distributed in the hope that it will be useful, but
-// WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-// General Public License for more details.
-// 
-// You should have received a copy of the GNU General Public License
-// along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
-//
-// 
-
-// Code:
+/**
+ * @file reduction.cpp
+ * @author Daniel Giedraitis (C00260331)
+ * @brief Demonstrates different summation methods including serial, parallel, and tiled parallel processing.
+ * @date 02/11/2023
+ * @copyright GPL-3.0
+ */
 
 #include <iostream>
 #include <stdlib.h>     /* srand, rand */
@@ -72,6 +33,12 @@ int get_num_threads(void) {
     return num_threads;
 }
 
+/**
+ * @brief Calculate the sum of elements in a vector serially.
+ * 
+ * @param data Vector of integers
+ * @return float Sum of elements in the vector
+ */
 float getSerialSum(vector<int> data){
   float sum=0.0;
   for(auto& value:data){
@@ -80,6 +47,12 @@ float getSerialSum(vector<int> data){
   return sum;
 }
 
+/**
+ * @brief Calculate the sum of elements in a vector using parallel processing.
+ * 
+ * @param data Vector of integers
+ * @return float Sum of elements in the vector
+ */
 float getParallelSum(vector<int> data){
   float sum=0.0;
 #pragma omp parallel for reduction(+:sum)
@@ -89,7 +62,12 @@ float getParallelSum(vector<int> data){
   return sum;
 }
 
-
+/**
+ * @brief Calculate the sum of elements in a vector using tiled parallel processing.
+ * 
+ * @param data Vector of integers
+ * @return float Sum of elements in the vector
+ */
 float getTiledParallelsum(vector<int> data){
   float result =0.0;
   NumThreads=get_num_threads();
@@ -111,7 +89,9 @@ float getTiledParallelsum(vector<int> data){
 }
 
 
-
+/**
+ * @brief Main function to test the different summation methods.
+ */
 int main(void){
   float sum=0.0;
   int average=0;

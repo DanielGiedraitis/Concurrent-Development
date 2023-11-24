@@ -1,51 +1,10 @@
-// stencil.cpp --- 
-// 
-// Filename: stencil.cpp
-// Description: 
-// Author: Joseph
-// Maintainer: 
-// Created: Mon Feb  4 10:10:27 2019 (+0000)
-// Version: 
-// Package-Requires: ()
-// Last-Updated: Fri Feb  8 10:14:29 2019 (+0000)
-//           By: Joseph Kehoe
-//     Update #: 40
-// URL: 
-// Doc URL: 
-// Keywords: 
-// Compatibility: 
-// 
-// 
-
-// Commentary: 
-// 
-// 
-// 
-// 
-
-// Change Log:
-// 
-// 
-// 
-// 
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or (at
-// your option) any later version.
-// 
-// This program is distributed in the hope that it will be useful, but
-// WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-// General Public License for more details.
-// 
-// You should have received a copy of the GNU General Public License
-// along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
-// 
-// 
-
-// Code:
-
-
+/**
+ * @file stencil.cpp
+ * @author Daniel Giedraitis (C00260331)
+ * @brief A program to perform a stencil operation on a vector using parallel processing.
+ * @date 02/11/2023
+ * @copyright GPL-3.0
+ */
 
 #include <iostream>
 #include <stdlib.h>     /* srand, rand */
@@ -61,6 +20,14 @@ using namespace std ;
 const int DIM=1000;
 const int SIZE=4;
 
+/**
+ * @brief Calculates neighbors around a specified index in a vector.
+ * 
+ * @param in Input vector.
+ * @param index Index for which neighbors need to be calculated.
+ * @param out Vector to store the calculated neighbors.
+ * @return int Returns 1 indicating successful calculation.
+ */
 int calcNeighbours(vector<float> const  &in, int index, vector<float>& out){
   int amount=out.size();
   for(int i=0;i<out.size();++i){//put neighbours of in[i] into out vector
@@ -75,6 +42,14 @@ int calcNeighbours(vector<float> const  &in, int index, vector<float>& out){
   return 1;
 }
 
+/**
+ * @brief Performs a stencil operation on a vector.
+ * 
+ * @param in Input vector.
+ * @param out Output vector.
+ * @param f Function to apply on the neighborhood of each element.
+ * @param size Size of the stencil.
+ */
 void stencil(vector<float> const &in, vector<float> &out,
 	     function <float(vector<float>) > f,int size){
 #pragma openmp parallel for
@@ -85,9 +60,12 @@ void stencil(vector<float> const &in, vector<float> &out,
   }
 }
 
-
-
-
+/**
+ * @brief Calculates the average of values in a vector.
+ * 
+ * @param currentValues Vector containing values to calculate the average.
+ * @return float Returns the calculated average.
+ */
 float getNewValue(vector<float> currentValues){
   float average=0.0;
   float total=0.0;
@@ -97,6 +75,11 @@ float getNewValue(vector<float> currentValues){
   return total/currentValues.size();
 }
 
+/**
+ * @brief Main function to demonstrate the stencil operation.
+ * 
+ * @return int Returns 0 upon successful execution.
+ */
 int main(void){
   vector<float> first(DIM), second(DIM);
   //initilise vectors
