@@ -1,0 +1,110 @@
+\doxysection{reduction.\+cpp File Reference}
+\hypertarget{reduction_8cpp}{}\label{reduction_8cpp}\index{reduction.cpp@{reduction.cpp}}
+
+
+Demonstrates different summation methods including serial, parallel, and tiled parallel processing.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$complex$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$omp.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{reduction_8cpp_ab6b513132f81d9de1ab9578e8a02dfe1}\label{reduction_8cpp_ab6b513132f81d9de1ab9578e8a02dfe1} 
+int {\bfseries get\+\_\+num\+\_\+threads} (void)
+\begin{DoxyCompactList}\small\item\em ! Find out how many threads are running! \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{reduction_8cpp_a31821d51dd484c9a9ef1f0d911920b2d}{get\+Serial\+Sum}} (vector$<$ int $>$ data)
+\begin{DoxyCompactList}\small\item\em Calculate the sum of elements in a vector serially. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{reduction_8cpp_a64e8554d4459a361ede8620d842ee3e2}{get\+Parallel\+Sum}} (vector$<$ int $>$ data)
+\begin{DoxyCompactList}\small\item\em Calculate the sum of elements in a vector using parallel processing. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{reduction_8cpp_aa01f1f55a817fa34c952af9917c6f2f3}{get\+Tiled\+Parallelsum}} (vector$<$ int $>$ data)
+\begin{DoxyCompactList}\small\item\em Calculate the sum of elements in a vector using tiled parallel processing. \end{DoxyCompactList}\item 
+\Hypertarget{reduction_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{reduction_8cpp_a840291bc02cba5474a4cb46a9b9566fe} 
+int {\bfseries main} (void)
+\begin{DoxyCompactList}\small\item\em Main function to test the different summation methods. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{reduction_8cpp_aa07caf85cdcdc69bc138cb903c343f52}\label{reduction_8cpp_aa07caf85cdcdc69bc138cb903c343f52} 
+const int {\bfseries LENGTH} =2000
+\item 
+\Hypertarget{reduction_8cpp_a761d3655563c63c0b8b291be491291dc}\label{reduction_8cpp_a761d3655563c63c0b8b291be491291dc} 
+int {\bfseries Num\+Threads} =1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Demonstrates different summation methods including serial, parallel, and tiled parallel processing. 
+
+\begin{DoxyAuthor}{Author}
+Daniel Giedraitis (C00260331) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+02/11/2023 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+GPL-\/3.\+0 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{reduction_8cpp_a64e8554d4459a361ede8620d842ee3e2}\label{reduction_8cpp_a64e8554d4459a361ede8620d842ee3e2} 
+\index{reduction.cpp@{reduction.cpp}!getParallelSum@{getParallelSum}}
+\index{getParallelSum@{getParallelSum}!reduction.cpp@{reduction.cpp}}
+\doxysubsubsection{\texorpdfstring{getParallelSum()}{getParallelSum()}}
+{\footnotesize\ttfamily float get\+Parallel\+Sum (\begin{DoxyParamCaption}\item[{vector$<$ int $>$}]{data }\end{DoxyParamCaption})}
+
+
+
+Calculate the sum of elements in a vector using parallel processing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Vector of integers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float Sum of elements in the vector 
+\end{DoxyReturn}
+\Hypertarget{reduction_8cpp_a31821d51dd484c9a9ef1f0d911920b2d}\label{reduction_8cpp_a31821d51dd484c9a9ef1f0d911920b2d} 
+\index{reduction.cpp@{reduction.cpp}!getSerialSum@{getSerialSum}}
+\index{getSerialSum@{getSerialSum}!reduction.cpp@{reduction.cpp}}
+\doxysubsubsection{\texorpdfstring{getSerialSum()}{getSerialSum()}}
+{\footnotesize\ttfamily float get\+Serial\+Sum (\begin{DoxyParamCaption}\item[{vector$<$ int $>$}]{data }\end{DoxyParamCaption})}
+
+
+
+Calculate the sum of elements in a vector serially. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Vector of integers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float Sum of elements in the vector 
+\end{DoxyReturn}
+\Hypertarget{reduction_8cpp_aa01f1f55a817fa34c952af9917c6f2f3}\label{reduction_8cpp_aa01f1f55a817fa34c952af9917c6f2f3} 
+\index{reduction.cpp@{reduction.cpp}!getTiledParallelsum@{getTiledParallelsum}}
+\index{getTiledParallelsum@{getTiledParallelsum}!reduction.cpp@{reduction.cpp}}
+\doxysubsubsection{\texorpdfstring{getTiledParallelsum()}{getTiledParallelsum()}}
+{\footnotesize\ttfamily float get\+Tiled\+Parallelsum (\begin{DoxyParamCaption}\item[{vector$<$ int $>$}]{data }\end{DoxyParamCaption})}
+
+
+
+Calculate the sum of elements in a vector using tiled parallel processing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Vector of integers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float Sum of elements in the vector 
+\end{DoxyReturn}
