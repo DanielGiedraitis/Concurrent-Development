@@ -1,11 +1,10 @@
-/*!
-	// Author: Daniel Giedraitis (C00260331)
-	// Date Created: 10/10/2023
-
-	// Purpose: This main function creates at least two threads demonstrating a reusable barrier in action.
-
-*/
-
+/**
+ * @file main.cpp
+ * @author Daniel Giedraitis (C00260331)
+ * @brief This main function creates at least two threads demonstrating a reusable barrier in action.
+ * @date 10/10/2023
+ * @copyright GPL-3.0
+ */
 #include "Barrier.h"
 #include <thread>
 #include <vector>

@@ -1,6 +1,7 @@
 # Author: Daniel Giedraitis (C00260331)
 # Date Created: 10/10/2023
 # Purpose: It contains rules that tell the system how to compile the code and produce a working executable called barrier.
+# GitHub URL: https://github.com/DanielGiedraitis/Concurrent-Development
 # Licence: GPL-3.0
 
 CC=g++

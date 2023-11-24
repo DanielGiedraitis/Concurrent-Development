@@ -1,9 +1,10 @@
-/*!
-	// Author: Daniel Giedraitis (C00260331)
-	// Date Created: 10/10/2023
-
-	// Purpose: The implementation file for the Barrier class.
-*/
+/**
+ * @file Barrier.cpp
+ * @author Daniel Giedraitis (C00260331)
+ * @brief The implementation file for the Barrier class.
+ * @date 10/10/2023
+ * @copyright GPL-3.0
+ */
 
 #include "Barrier.h"
 

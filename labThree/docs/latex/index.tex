@@ -1,0 +1,110 @@
+\chapter{Lab 3\+: Reusable Barrier Class}
+\hypertarget{index}{}\label{index}\index{Lab 3: Reusable Barrier Class@{Lab 3: Reusable Barrier Class}}
+\label{index_md__r_e_a_d_m_e}%
+\Hypertarget{index_md__r_e_a_d_m_e}%
+ \DoxyHorRuler{0}
+\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Description}{Description}}\label{index_autotoc_md2}
+This lab will revolve around creating a reusable barrier class using semaphores.\hypertarget{index_autotoc_md3}{}\doxysection{\texorpdfstring{List of Files and Contents}{List of Files and Contents}}\label{index_autotoc_md3}
+
+\begin{DoxyItemize}
+\item {\bfseries{\doxylink{_semaphore_8h}{Semaphore.\+h} -\/}} Header file for the \doxylink{class_semaphore}{Semaphore} class.
+\item {\bfseries{\doxylink{_semaphore_8cpp}{Semaphore.\+cpp} -\/}} Implementation file for the \doxylink{class_semaphore}{Semaphore} class.
+\item {\bfseries{\doxylink{_barrier_8cpp}{Barrier.\+cpp} -\/}} The implementation file for the \doxylink{class_barrier}{Barrier} class.
+\item {\bfseries{\doxylink{_barrier_8h}{Barrier.\+h} -\/}} The header file for the \doxylink{class_barrier}{Barrier} class.
+\item {\bfseries{\doxylink{main_8cpp}{main.\+cpp} -\/}} The file containing the main function. This main function will create at least two threads demonstrating a reusable barrier in action.
+\item {\bfseries{Makefile -\/}} This is the project file. It contains rules that tell the system how to compile the code and produce a working executable called barrier.
+\item {\bfseries{README -\/}} Contains Lab 3 information, installation instructions, compilation, and execution guidelines.
+\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysection{\texorpdfstring{How to install project}{How to install project}}\label{index_autotoc_md4}
+To set up this project on your system, follow these steps\+:
+
+
+\begin{DoxyEnumerate}
+\item Ensure that GCC is installed on your machine.
+\item Clone this repository to your local environment.
+\item Open your terminal and navigate to the project directory.
+\item Once in the folder, use the following commands\+:
+\begin{DoxyItemize}
+\item {\bfseries{Build the Executables\+:}}
+\begin{DoxyItemize}
+\item Run {\ttfamily make} or {\ttfamily make build} to generate the main executables.
+\item For {\ttfamily barrier}\+:
+\begin{DoxyItemize}
+\item Execute {\ttfamily make barrier}.
+\end{DoxyItemize}
+\item To create a debug version with symbols\+:
+\begin{DoxyItemize}
+\item Use {\ttfamily make debug} to build the executables with debug symbols.
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item {\bfseries{Run the Executables\+:}}
+\begin{DoxyItemize}
+\item To execute the generated programs, use the shell command {\ttfamily ./barrier}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md5}{}\doxysection{\texorpdfstring{Testing Procedures}{Testing Procedures}}\label{index_autotoc_md5}
+\hypertarget{index_autotoc_md6}{}\doxysubsection{\texorpdfstring{barrier}{barrier}}\label{index_autotoc_md6}
+
+\begin{DoxyItemize}
+\item {\bfseries{Expected Output}}\+:
+\begin{DoxyItemize}
+\item first
+\item first
+\item first
+\item first
+\item first
+\item second
+\item second
+\item second
+\item second
+\item second
+\item first
+\item first
+\item first
+\item first
+\item first
+\item second
+\item second
+\item second
+\item second
+\item second
+\item first
+\item first
+\item first
+\item first
+\item first
+\item second
+\item second
+\item second
+\item second
+\item second
+\item first
+\item first
+\item first
+\item first
+\item first
+\item second
+\item second
+\item second
+\item second
+\item second
+\item first
+\item first
+\item first
+\item first
+\item first
+\item second
+\item second
+\item second
+\item second
+\item second
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md7}{}\doxysection{\texorpdfstring{License}{License}}\label{index_autotoc_md7}
+\href{https://www.gnu.org/licenses/gpl-3.0.en.html}{\texttt{ GNU General Public License v3.\+0}}\hypertarget{index_autotoc_md8}{}\doxysection{\texorpdfstring{Author}{Author}}\label{index_autotoc_md8}
+
+\begin{DoxyItemize}
+\item {\bfseries{Name\+:}} Daniel Giedraitis
+\item {\bfseries{Email\+:}} \href{mailto:daniel.giedraitis@gmail.com}{\texttt{ daniel.\+giedraitis@gmail.\+com}}
+\item {\bfseries{Other Projects\+:}} \href{https://github.com/DanielGiedraitis}{\texttt{ https\+://github.\+com/\+Daniel\+Giedraitis}}
+\item {\bfseries{Linked\+In\+:}} \href{https://www.linkedin.com/in/daniel-giedraitis}{\texttt{ https\+://www.\+linkedin.\+com/in/daniel-\/giedraitis}}
+\end{DoxyItemize}\hypertarget{index_autotoc_md9}{}\doxysection{\texorpdfstring{Github Repository}{Github Repository}}\label{index_autotoc_md9}
+Url\+: \href{https://github.com/DanielGiedraitis/Concurrent-Development/tree/main}{\texttt{ Github Repository}} 

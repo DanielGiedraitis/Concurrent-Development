@@ -1,10 +1,10 @@
-/*!
-	// Author: Daniel Giedraitis (C00260331)
-	// Date Created: 10/10/2023
-
-	// Purpose: The header file for the Barrier class.
-*/
-
+/**
+ * @file Barrier.h
+ * @author Daniel Giedraitis (C00260331)
+ * @brief The header file for the Barrier class.
+ * @date 10/10/2023
+ * @copyright GPL-3.0
+ */
 #include "Semaphore.h"
 #include <iostream>
 #include <stdio.h>

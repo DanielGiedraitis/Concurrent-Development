@@ -1,3 +1,11 @@
+/**
+ * @file Semaphore.cpp
+ * @author Daniel Giedraitis (C00260331)
+ * @brief A Semaphore Implementation
+ * @date 10/10/2023
+ * @copyright GPL-3.0
+ */
+
 #include "Semaphore.h"
 /*! \class Semaphore
     \brief A Semaphore Implementation
