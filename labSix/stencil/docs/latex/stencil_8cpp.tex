@@ -1,0 +1,125 @@
+\doxysection{stencil.\+cpp File Reference}
+\hypertarget{stencil_8cpp}{}\label{stencil_8cpp}\index{stencil.cpp@{stencil.cpp}}
+
+
+A program to perform a stencil operation on a vector using parallel processing.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$complex$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{stencil_8cpp_a16cd13f0a990612823638d179af32bdb}{calc\+Neighbours}} (vector$<$ float $>$ const \&in, int index, vector$<$ float $>$ \&out)
+\begin{DoxyCompactList}\small\item\em Calculates neighbors around a specified index in a vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stencil_8cpp_a37439b563a5dae2d097c1f8ac30d17c5}{stencil}} (vector$<$ float $>$ const \&in, vector$<$ float $>$ \&out, function$<$ float(vector$<$ float $>$) $>$ f, int size)
+\begin{DoxyCompactList}\small\item\em Performs a stencil operation on a vector. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{stencil_8cpp_a6d6a4c1769d6dd5c00d3c0fb296988fa}{get\+New\+Value}} (vector$<$ float $>$ current\+Values)
+\begin{DoxyCompactList}\small\item\em Calculates the average of values in a vector. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{stencil_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em Main function to demonstrate the stencil operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{stencil_8cpp_a589b8b9bfdf714f736059845d568b597}\label{stencil_8cpp_a589b8b9bfdf714f736059845d568b597} 
+const int {\bfseries DIM} =1000
+\item 
+\Hypertarget{stencil_8cpp_af08413a3ee12cf78b0ddeea71e2648b3}\label{stencil_8cpp_af08413a3ee12cf78b0ddeea71e2648b3} 
+const int {\bfseries SIZE} =4
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A program to perform a stencil operation on a vector using parallel processing. 
+
+\begin{DoxyAuthor}{Author}
+Daniel Giedraitis (C00260331) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+02/11/2023 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+GPL-\/3.\+0 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{stencil_8cpp_a16cd13f0a990612823638d179af32bdb}\label{stencil_8cpp_a16cd13f0a990612823638d179af32bdb} 
+\index{stencil.cpp@{stencil.cpp}!calcNeighbours@{calcNeighbours}}
+\index{calcNeighbours@{calcNeighbours}!stencil.cpp@{stencil.cpp}}
+\doxysubsubsection{\texorpdfstring{calcNeighbours()}{calcNeighbours()}}
+{\footnotesize\ttfamily int calc\+Neighbours (\begin{DoxyParamCaption}\item[{vector$<$ float $>$ const \&}]{in,  }\item[{int}]{index,  }\item[{vector$<$ float $>$ \&}]{out }\end{DoxyParamCaption})}
+
+
+
+Calculates neighbors around a specified index in a vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & Input vector. \\
+\hline
+{\em index} & Index for which neighbors need to be calculated. \\
+\hline
+{\em out} & Vector to store the calculated neighbors. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 1 indicating successful calculation. 
+\end{DoxyReturn}
+\Hypertarget{stencil_8cpp_a6d6a4c1769d6dd5c00d3c0fb296988fa}\label{stencil_8cpp_a6d6a4c1769d6dd5c00d3c0fb296988fa} 
+\index{stencil.cpp@{stencil.cpp}!getNewValue@{getNewValue}}
+\index{getNewValue@{getNewValue}!stencil.cpp@{stencil.cpp}}
+\doxysubsubsection{\texorpdfstring{getNewValue()}{getNewValue()}}
+{\footnotesize\ttfamily float get\+New\+Value (\begin{DoxyParamCaption}\item[{vector$<$ float $>$}]{current\+Values }\end{DoxyParamCaption})}
+
+
+
+Calculates the average of values in a vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Values} & Vector containing values to calculate the average. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float Returns the calculated average. 
+\end{DoxyReturn}
+\Hypertarget{stencil_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{stencil_8cpp_a840291bc02cba5474a4cb46a9b9566fe} 
+\index{stencil.cpp@{stencil.cpp}!main@{main}}
+\index{main@{main}!stencil.cpp@{stencil.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Main function to demonstrate the stencil operation. 
+
+\begin{DoxyReturn}{Returns}
+int Returns 0 upon successful execution. 
+\end{DoxyReturn}
+\Hypertarget{stencil_8cpp_a37439b563a5dae2d097c1f8ac30d17c5}\label{stencil_8cpp_a37439b563a5dae2d097c1f8ac30d17c5} 
+\index{stencil.cpp@{stencil.cpp}!stencil@{stencil}}
+\index{stencil@{stencil}!stencil.cpp@{stencil.cpp}}
+\doxysubsubsection{\texorpdfstring{stencil()}{stencil()}}
+{\footnotesize\ttfamily void stencil (\begin{DoxyParamCaption}\item[{vector$<$ float $>$ const \&}]{in,  }\item[{vector$<$ float $>$ \&}]{out,  }\item[{function$<$ float(vector$<$ float $>$) $>$}]{f,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Performs a stencil operation on a vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & Input vector. \\
+\hline
+{\em out} & Output vector. \\
+\hline
+{\em f} & Function to apply on the neighborhood of each element. \\
+\hline
+{\em size} & Size of the stencil. \\
+\hline
+\end{DoxyParams}
