@@ -7,6 +7,9 @@ Welcome to my Lab folder for my Concurrent Development module.
 ## Usage  
 C++ Programming labs for (J.K)
 
+## Repository
+[GitHub Repository](https://github.com/DanielGiedraitis/Concurrent-Development)
+
 ## License
 [GNU General Public License v3.0 ](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
