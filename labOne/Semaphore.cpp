@@ -8,7 +8,7 @@
 
 
 
-
+//! Blocks until the semaphore's count is greater than zero, then decrements the count.
 void Semaphore::Wait()
 {
       std::unique_lock< std::mutex > lock(m_mutex);
@@ -16,6 +16,11 @@ void Semaphore::Wait()
       --m_uiCount;
 }
 
+/*!
+    \brief Blocks until the semaphore's count is greater than zero or the timeout duration is reached, then decrements the count.
+    \param crRelTime The relative timeout duration for waiting.
+    \return True if the semaphore was successfully acquired within the timeout, false otherwise.
+*/
 template< typename R,typename P >
 bool Semaphore::Wait(const std::chrono::duration<R,P>& crRelTime)
 {
@@ -27,6 +32,7 @@ bool Semaphore::Wait(const std::chrono::duration<R,P>& crRelTime)
       return true;
 }
 
+//! Increments the semaphore's count and wakes up one waiting thread, if any.
 void Semaphore::Signal()
 {
       std::unique_lock< std::mutex > lock(m_mutex);
