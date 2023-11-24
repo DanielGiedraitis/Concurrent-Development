@@ -1,3 +1,11 @@
+/**
+ * @file Event.h
+ * @author Daniel Giedraitis (C00260331)
+ * @brief 
+ * @date 10/10/2023
+ * @copyright GPL-3.0
+ */
+
 /* Event.h --- 
  * 
  * Filename: Event.h

@@ -1,3 +1,11 @@
+/**
+ * @file SafeBuffer.cpp
+ * @author Daniel Giedraitis (C00260331)
+ * @brief Creates events and adds them to buffer
+ * @date 10/10/2023
+ * @copyright GPL-3.0
+ */
+
 /* SafeBuffer.h --- 
  * 
  * Filename: SafeBuffer.h

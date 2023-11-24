@@ -1,0 +1,53 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+Creates events and adds them to buffer.  
+
+
+{\ttfamily \#include "{}Barrier.\+h"{}}\newline
+{\ttfamily \#include "{}Event.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8cpp_a2b63c7faa516bb54f6d98346900864dc}\label{main_8cpp_a2b63c7faa516bb54f6d98346900864dc} 
+void {\bfseries producer} (std\+::shared\+\_\+ptr$<$ Safe\+Buffer$<$ std\+::shared\+\_\+ptr$<$ Event $>$ $>$ the\+Buffer, int num\+Loops)
+\begin{DoxyCompactList}\small\item\em Creates events and adds them to buffer. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a0c3ad1f29466ff569055abe586f9ad0a}\label{main_8cpp_a0c3ad1f29466ff569055abe586f9ad0a} 
+void {\bfseries consumer} (std\+::shared\+\_\+ptr$<$ Safe\+Buffer$<$ std\+::shared\+\_\+ptr Event $>$ $>$ the\+Buffer, int num\+Loops)
+\item 
+int \mbox{\hyperlink{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8cpp_aab938108caad0d0e47d6885b5ba2d23a}\label{main_8cpp_aab938108caad0d0e47d6885b5ba2d23a} 
+const int {\bfseries size} =20
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Creates events and adds them to buffer. 
+
+\begin{DoxyAuthor}{Author}
+Daniel Giedraitis (C00260331) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+10/10/2023 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+GPL-\/3.\+0 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\texorpdfstring{$<$}{<} Launch the threads ~\newline
