@@ -1,3 +1,12 @@
+/**
+ * @file Semaphore.h
+ * @author Daniel Giedraitis (C00260331)
+ * @brief A Semaphore Implementation
+ * @date 25/09/2023
+ * @copyright GPL-3.0
+ * GitHub URL : https://github.com/DanielGiedraitis/Concurrent-Development
+ */
+
 #ifndef SEMAPHORE_H
 #define SEMAPHORE_H 
 #include <mutex>

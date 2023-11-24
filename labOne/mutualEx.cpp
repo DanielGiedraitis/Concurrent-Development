@@ -1,9 +1,11 @@
-/*!
-	// Author: Daniel Giedraitis (C00260331)
-	// Date Created: 25/09/2023
-
-  // Purpose: To demonstrate the implementation of Mutual Exclusion using Semaphores, allowing multiple threads to safely update a shared variable.
-*/
+/**
+ * @file mutualEx.cpp
+ * @author Daniel Giedraitis (C00260331)
+ * @brief To demonstrate the implementation of Mutual Exclusion using Semaphores, allowing multiple threads to safely update a shared variable.
+ * @date 25/09/2023
+ * @copyright GPL-3.0
+ * GitHub URL : https://github.com/DanielGiedraitis/Concurrent-Development
+ */
 
 #include "Semaphore.h"
 #include <iostream>

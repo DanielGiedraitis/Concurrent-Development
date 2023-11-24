@@ -1,16 +1,18 @@
-/*!
-	// Author: Daniel Giedraitis (C00260331)
-	// Date Created: 25/09/2023
-
-	// Purpose: A Semaphore Implementation to demonstrate serialization, where task A must occur before task B.
-*/
+/**
+ * @file helloThreads.cpp
+ * @author Daniel Giedraitis (C00260331)
+ * @brief A Semaphore Implementation to demonstrate serialization, where task A must occur before task B.
+ * @date 25/09/2023
+ * @copyright GPL-3.0
+ * GitHub URL : https://github.com/DanielGiedraitis/Concurrent-Development
+ */
 
 #include "Semaphore.h"
 #include <iostream>
 #include <thread>
 #include <unistd.h>
 
-/*! displays a message first*/
+/*! displays a message first */
 void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay)
 {
   // Sleep for a specified amount of time.
@@ -25,7 +27,7 @@ void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay)
   theSemaphore->Signal();
 }
 
-/*! displays a message second*/
+/*! displays a message second */
 void taskTwo(std::shared_ptr<Semaphore> theSemaphore)
 {
   // Wait for the semaphore to be signaled by taskOne
