@@ -4,7 +4,6 @@
  * @brief A Semaphore Implementation
  * @date 25/09/2023
  * @copyright GPL-3.0
- * GitHub URL : https://github.com/DanielGiedraitis/Concurrent-Development
  */
 
 #include "Semaphore.h"

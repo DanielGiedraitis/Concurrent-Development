@@ -4,7 +4,6 @@
  * @brief To demonstrate the implementation of Mutual Exclusion using Semaphores, allowing multiple threads to safely update a shared variable.
  * @date 25/09/2023
  * @copyright GPL-3.0
- * GitHub URL : https://github.com/DanielGiedraitis/Concurrent-Development
  */
 
 #include "Semaphore.h"
