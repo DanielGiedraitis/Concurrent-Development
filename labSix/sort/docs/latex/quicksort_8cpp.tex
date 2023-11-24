@@ -1,0 +1,91 @@
+\doxysection{quicksort.\+cpp File Reference}
+\hypertarget{quicksort_8cpp}{}\label{quicksort_8cpp}\index{quicksort.cpp@{quicksort.cpp}}
+
+
+Implementation of the Quicksort algorithm using Open\+MP for parallelization.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$complex$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{quicksort_8cpp_add0c75483571528ab72d2557f4a2aeaf}{partition}} (vector$<$ int $>$ \&my\+Array, int low, int high)
+\begin{DoxyCompactList}\small\item\em Partitions the array based on a pivot element. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{quicksort_8cpp_aae2561911aebe6763a11df2e104b885a}{quicksort}} (vector$<$ int $>$ \&my\+Array, int low, int high)
+\begin{DoxyCompactList}\small\item\em Recursive function to perform Quicksort on the array. \end{DoxyCompactList}\item 
+\Hypertarget{quicksort_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{quicksort_8cpp_a840291bc02cba5474a4cb46a9b9566fe} 
+int {\bfseries main} (void)
+\begin{DoxyCompactList}\small\item\em Main function to test the Quicksort algorithm. Generates random data, performs Quicksort, and displays the sorted array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{quicksort_8cpp_aa07caf85cdcdc69bc138cb903c343f52}\label{quicksort_8cpp_aa07caf85cdcdc69bc138cb903c343f52} 
+const int {\bfseries LENGTH} =2000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the Quicksort algorithm using Open\+MP for parallelization. 
+
+\begin{DoxyAuthor}{Author}
+Daniel Giedraitis (C00260331) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+02/11/2023 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+GPL-\/3.\+0 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{quicksort_8cpp_add0c75483571528ab72d2557f4a2aeaf}\label{quicksort_8cpp_add0c75483571528ab72d2557f4a2aeaf} 
+\index{quicksort.cpp@{quicksort.cpp}!partition@{partition}}
+\index{partition@{partition}!quicksort.cpp@{quicksort.cpp}}
+\doxysubsubsection{\texorpdfstring{partition()}{partition()}}
+{\footnotesize\ttfamily int partition (\begin{DoxyParamCaption}\item[{vector$<$ int $>$ \&}]{my\+Array,  }\item[{int}]{low,  }\item[{int}]{high }\end{DoxyParamCaption})}
+
+
+
+Partitions the array based on a pivot element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+Array} & The array to be partitioned. \\
+\hline
+{\em low} & The starting index of the partition. \\
+\hline
+{\em high} & The ending index of the partition. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The index of the pivot element after partitioning. 
+\end{DoxyReturn}
+\Hypertarget{quicksort_8cpp_aae2561911aebe6763a11df2e104b885a}\label{quicksort_8cpp_aae2561911aebe6763a11df2e104b885a} 
+\index{quicksort.cpp@{quicksort.cpp}!quicksort@{quicksort}}
+\index{quicksort@{quicksort}!quicksort.cpp@{quicksort.cpp}}
+\doxysubsubsection{\texorpdfstring{quicksort()}{quicksort()}}
+{\footnotesize\ttfamily int quicksort (\begin{DoxyParamCaption}\item[{vector$<$ int $>$ \&}]{my\+Array,  }\item[{int}]{low,  }\item[{int}]{high }\end{DoxyParamCaption})}
+
+
+
+Recursive function to perform Quicksort on the array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+Array} & The array to be sorted. \\
+\hline
+{\em low} & The starting index of the partition. \\
+\hline
+{\em high} & The ending index of the partition. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 indicating the completion of the sorting process. 
+\end{DoxyReturn}
