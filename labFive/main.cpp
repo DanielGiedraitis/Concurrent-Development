@@ -1,37 +1,10 @@
-/* main.c --- 
- * 
- * Filename: main.c
- * Description: 
- * Author: Joseph
- * Maintainer: 
- * Created: Wed Oct 11 09:28:12 2023 (+0100)
- * Last-Updated: Wed Oct 11 10:01:39 2023 (+0100)
- *           By: Joseph
- *     Update #: 13
- * 
- */
+/*!
+	// Author: Daniel Giedraitis (C00260331)
+	// Date Created: 02/11/2023
 
-/* Commentary: 
- * 
- * 
- * 
- */
+	// Purpose: Implements the dining philosophers problem using Semaphores for synchronization.
 
-/* This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or (at
- * your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
- */
-
-/* Code: */
+*/
 
 #include "Semaphore.h"
 #include <iostream>
@@ -39,7 +12,7 @@
 #include <vector>
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
-#include<unistd.h>
+#include <unistd.h>
 
 const int COUNT = 5;
 const int THINKTIME=3;
@@ -54,13 +27,25 @@ void think(int myID){
 }
 
 void get_forks(int philID){
-  forks[philID].Wait();
-  forks[(philID+1)%COUNT].Wait();
+  if(philID == COUNT - 1) {
+    forks[(philID+1)%COUNT].Wait();
+    forks[philID].Wait();
+  } 
+  else {
+    forks[philID].Wait();
+    forks[(philID+1)%COUNT].Wait();
+  }
 }
 
 void put_forks(int philID){
-  forks[philID].Signal();
-  forks[(philID+1)%COUNT].Signal();  
+  if(philID == COUNT - 1) {
+    forks[(philID+1)%COUNT].Signal();
+    forks[philID].Signal();
+  } 
+  else {
+    forks[philID].Signal();
+    forks[(philID+1)%COUNT].Signal(); 
+  }
 }
 
 void eat(int myID){
@@ -69,12 +54,14 @@ void eat(int myID){
   sleep(seconds);  
 }
 
-void philosopher(int id/* other params here*/){
+void philosopher(int id, std::shared_ptr<Semaphore> liftFork){
   while(true){
     think(id);
+    liftFork->Wait();
     get_forks(id);
     eat(id);
     put_forks(id);
+    liftFork->Signal();
   }//while  
 }//philosopher
 
@@ -82,10 +69,15 @@ void philosopher(int id/* other params here*/){
 
 int main(void){
   srand (time(NULL)); // initialize random seed: 
+  std::shared_ptr<Semaphore> liftFork = std::make_shared<Semaphore>(4);
   std::vector<std::thread> vt(COUNT);
+  for(Semaphore& s: forks) {
+  // Semaphores need to be at 1 otherwise no one will ever even get a fork
+    s.Signal();
+  }
   int id=0;
   for(std::thread& t: vt){
-    t=std::thread(philosopher,id++/*,params*/);
+    t=std::thread(philosopher,id++, liftFork);
   }
   /**< Join the philosopher threads with the main thread */
   for (auto& v :vt){
